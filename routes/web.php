@@ -90,4 +90,10 @@ Route::get('/nova', function(){
   return view('nova');
 });
 
-Route::post('/', 'ExemploController@add')->name('routename');
+Route::post('/', 'UsuarioController@store')->name('routename');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/apagar/{id}', 'UsuarioController@destroy');
